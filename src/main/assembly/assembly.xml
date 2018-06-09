@@ -1,0 +1,30 @@
+<assembly>  
+    <formats>
+        <format>dir</format>
+        <format>zip</format>  
+    </formats>  
+    <fileSets>
+        <fileSet>  
+            <directory>src/main/assembly/bin</directory>  
+            <outputDirectory>bin</outputDirectory>
+             <fileMode>0755</fileMode>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+        </fileSet>  
+        <fileSet>  
+            <directory>src/main/resources/</directory>
+            <fileMode>0755</fileMode>
+            <!--输出到当前路径-->
+            <outputDirectory>.</outputDirectory>
+        </fileSet> 
+    </fileSets>
+    <dependencySets>  
+        <dependencySet>  
+            <outputDirectory>lib</outputDirectory> 
+            <fileMode>0644</fileMode> 
+            <useProjectArtifact>true</useProjectArtifact>  
+            <scope>runtime</scope>  
+        </dependencySet>  
+    </dependencySets>  
+</assembly>  
