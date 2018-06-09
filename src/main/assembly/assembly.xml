@@ -10,6 +10,7 @@
              <fileMode>0755</fileMode>
             <includes>
                 <include>*.sh</include>
+                <include>*.bat</include>
             </includes>
         </fileSet>  
         <fileSet>  
@@ -17,7 +18,7 @@
             <fileMode>0755</fileMode>
             <!--输出到当前路径-->
             <outputDirectory>.</outputDirectory>
-        </fileSet> 
+        </fileSet>
     </fileSets>
     <dependencySets>  
         <dependencySet>  

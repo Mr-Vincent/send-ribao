@@ -5,7 +5,9 @@ import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Properties;
 import java.util.Random;
 
@@ -59,7 +61,14 @@ public class SendMail {
         String task = genNextTaskMsg();
         String admin = load("admin");
         String leader = load("leader");
-        send("wei.dong@ectrip.com", "19931226dongW", "日报", new String[]{admin, leader}, task);
+        String userName = load("myemail");
+        String myPass = load("mypass");
+        String title = load("title");
+
+        if ("".equals(title) || null == title) {
+            title = "日报";
+        }
+        send(userName, myPass, title, new String[]{admin, leader}, task);
     }
 
     private static Properties loadFile(String fileName) throws IOException {
